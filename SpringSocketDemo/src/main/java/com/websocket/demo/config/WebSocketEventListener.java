@@ -22,9 +22,11 @@ public class WebSocketEventListener {
             var chatMessage = ChatMessage.builder()
                     .type(MessageType.LEAVE)
                     .sender(username)
+                    .countUser(ChatMessage.UpdateCountUserdec())
                     .build();
-
             messageSendingOperations.convertAndSend("/topic/public", chatMessage);
+
         }
     }
-}
+    }
+
